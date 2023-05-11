@@ -1,9 +1,21 @@
 /*Focuser for Nano And DRV8825
 
+Notes from Gord Tulloch May 11 2023:
+  Similar to the work this on is derived from this is as close as I can find for focuser software to drive my DIY focuser 
+  using this code talking to an INDI driver. I do however want to add temperature control so I forked this software so I 
+  can customize it for my purposes. I will include schematics for my hardware and any 3D printed parts when they are finalized.
+  Like Ray's version my hardware is powered by a Arduino Nano driving a DRV8825. I use a NEMA 8 motor and a custom 3D printed
+  bracket.
+
+Original Notes from Ray (https://codeberg.org/blueshawk/rays-indifocuser):
    I originally trimmed this down from Robert Brown's earlier focuser code
    To make it easier to read and then modified it to suit motor_ needs,
    but this is now an amalgam of several different focuser drivers as none quite matched the options I wanted.
-.3
+   This focuser was originally based on an older version of Robert Brown's focuser-pro and has been modified to 
+   include code from mltple sources with a single backlash setting and serial commands to control it.
+   Hardware: I used a drv8825 driver board mounted directly to an arduino nano with a pin header. The motor 
+   output is powered by the 12v battery and a single 4 wire cable plugs into stepper motors on several different
+   telescope OTA's.
 */
 
 #include <Arduino.h>
